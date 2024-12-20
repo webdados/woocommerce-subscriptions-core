@@ -17,7 +17,7 @@ if ( empty( $subscriptions ) ) {
 $has_automatic_renewal = false;
 $is_parent_order       = wcs_order_contains_subscription( $order, 'parent' );
 
-do_action( 'wcs_email_before_subscription_info', $subscription, $order, $has_automatic_renewal, $is_parent_order, $sent_to_admin, $plain_text );
+do_action( 'wcs_email_before_subscription_info', $subscriptions, $order, $has_automatic_renewal, $is_parent_order, $sent_to_admin, $plain_text );
 
 ?>
 <div style="margin-bottom: 40px;">
@@ -79,4 +79,4 @@ if ( $has_automatic_renewal && ! $is_admin_email && $subscription->get_time( 'ne
 </div>
 <?php
 
-do_action( 'wcs_email_after_subscription_info', $subscription, $order, $has_automatic_renewal, $is_parent_order, $sent_to_admin, $plain_text );
+do_action( 'wcs_email_after_subscription_info', $subscriptions, $order, $has_automatic_renewal, $is_parent_order, $sent_to_admin, $plain_text );
